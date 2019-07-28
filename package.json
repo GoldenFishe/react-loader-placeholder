@@ -1,0 +1,31 @@
+{
+  "name": "react-loader-placeholder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/reactLoaderPlaceholder.min.js",
+  "scripts": {
+    "build": "rollup -c -o dist/reactLoaderPlaceholder.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipszdavido/countdown-timer.git"
+  },
+  "keywords": [],
+  "author": "Chidume Nnamdi <kurtwanger40@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philipszdavido/countdown-timer/issues"
+  },
+  "homepage": "https://github.com/philipszdavido/countdown-timer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.8.6",
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^5.1.1",
+    "styled-components": "^4.3.2"
+  }
+}
