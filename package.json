@@ -1,7 +1,8 @@
 {
   "name": "react-loader-placeholder",
   "version": "1.0.0",
-  "description": "",
+  "description": "A React library used to make your loader awesome",
+  "private": false,
   "main": "dist/reactLoaderPlaceholder.min.js",
   "scripts": {
     "build": "rollup -c -o dist/reactLoaderPlaceholder.min.js",
@@ -9,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/philipszdavido/countdown-timer.git"
+    "url": "git+https://github.com/GoldenFishe/react-loader-placeholder.git"
   },
-  "keywords": [],
-  "author": "Chidume Nnamdi <kurtwanger40@gmail.com>",
-  "license": "ISC",
+  "keywords": ["react", "loading", "loader", "placeholder", "progress", "spinner", "awesome"],
+  "author": "Riazanov Anton <ag.riazanov@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/philipszdavido/countdown-timer/issues"
+    "url": "https://github.com/GoldenFishe/react-loader-placeholder/issues"
   },
-  "homepage": "https://github.com/philipszdavido/countdown-timer#readme",
+  "homepage": "https://github.com/GoldenFishe/react-loader-placeholder#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
@@ -27,5 +28,9 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-terser": "^5.1.1",
     "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "styled-components": "^4.0.0"
   }
 }

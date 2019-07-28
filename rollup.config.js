@@ -4,7 +4,7 @@ import postcss from 'rollup-plugin-postcss';
 
 const config = {
     input: 'src/reactLoaderPlaceholder.js',
-    external: ['react'],
+    external: ['react', 'styled-components'],
     output: {
         format: 'umd',
         name: 'react-loader-placeholder',

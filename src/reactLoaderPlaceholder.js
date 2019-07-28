@@ -1,7 +1,7 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 
-const loaderItem = keyframes`
+const loaderItemAnimation = keyframes`
     0% {
         background-position: 0% 50%
     }
@@ -10,11 +10,15 @@ const loaderItem = keyframes`
     }
     100% {
         background-position: 0% 50%
-    }`;
+     }
+`;
+
+const animation = props => props.disableAnimation ? css`unset` : css`${loaderItemAnimation} 5s ease infinite`;
 
 const Wrapper = styled.div`
     width: 100%;
     height: 100%;
+    flex: 1 0 auto;
     
     [data-react-loader-placeholder="true"] {
         position: relative;
@@ -22,7 +26,9 @@ const Wrapper = styled.div`
 
     [data-react-loader-placeholder="true"]::after {
         content: '';
-        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background: ${props => props.background ?
+            props.background :
+            'linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB)'};
 	    background-size: 400% 400%;
         position: absolute;
         width: 100%;
@@ -30,13 +36,30 @@ const Wrapper = styled.div`
         top: 0;
         left: 0;
         border-radius: 4px;
-        animation: ${loaderItem} 5s ease infinite;
+        animation: ${animation};
     }
-`
+`;
 
-const ReactLoaderPlaceholder= ({loading, children}) => (
+/**
+ * The component's props.
+ * @typedef {Object} Props
+ * @property {boolean} loading - Enable placeholder.
+ * @property {string} color - background color of placeholder.
+ * @property {boolean} disableAnimation - Disable placeholder's animation.
+ */
+
+/**
+ * ReactLoaderPlaceholder Component
+ * @param {Props}
+ */
+const ReactLoaderPlaceholder = ({loading, color, disableAnimation, children}) => (
     <React.Fragment>
-        {loading ? <Wrapper>{children}</Wrapper> : children}
+        {loading ?
+            <Wrapper background={color}
+                     disableAnimation={disableAnimation}>
+                {children}
+            </Wrapper> :
+            children}
     </React.Fragment>
 );
 
