@@ -46,16 +46,20 @@ const Wrapper = styled.div`
  * @property {boolean} loading - Enable placeholder.
  * @property {string} color - background color of placeholder.
  * @property {boolean} disableAnimation - Disable placeholder's animation.
+ * @property {string} className -className.
+ * @property {Object} style - style Object.
  */
 
 /**
  * ReactLoaderPlaceholder Component
  * @param {Props}
  */
-const ReactLoaderPlaceholder = ({loading, color, disableAnimation, children}) => (
+const ReactLoaderPlaceholder = ({loading, color, disableAnimation, className, style, children}) => (
     <React.Fragment>
         {loading ?
             <Wrapper background={color}
+                     className={className}
+                     style={style}
                      disableAnimation={disableAnimation}>
                 {children}
             </Wrapper> :

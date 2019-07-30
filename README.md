@@ -29,3 +29,5 @@ The `<ReactLoaderPlaceholder>`  component props:
 - **loading** `boolean` _required_ - Enable or disable placeholder.
 - **color** `string` _optional_ - Background color of placeholder item.
 - **disableAnimation** `boolean` _optional_ - Enable or disable animation.
+- **className** `string` _optional_ 
+- **style** `Object` _optional_
