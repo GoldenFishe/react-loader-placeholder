@@ -22,6 +22,8 @@ const Wrapper = styled.div`
     
     [data-react-loader-placeholder="true"] {
         position: relative;
+        top: 0;
+        left: 0;
     }
 
     [data-react-loader-placeholder="true"]::after {
@@ -37,6 +39,7 @@ const Wrapper = styled.div`
         left: 0;
         border-radius: 4px;
         animation: ${animation};
+        z-index: 99999;
     }
 `;
 
