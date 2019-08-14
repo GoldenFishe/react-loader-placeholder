@@ -9,7 +9,8 @@ const config = {
         format: 'umd',
         name: 'react-loader-placeholder',
         globals: {
-            react: "React"
+            react: "React",
+            "styled-components": "styled"
         }
     },
     plugins: [
