@@ -1,4 +1,6 @@
-# react-loader-placeholder
+# react-loader-placeholder 
+[![npm version](https://badge.fury.io/js/react-loader-placeholder.svg)](https://badge.fury.io/js/react-loader-placeholder)
+![npm](https://img.shields.io/npm/dm/react-loader-placeholder)
 
 Make beautiful, animated loading that easy adapt to your app.
 
