@@ -1,7 +1,7 @@
 # react-loader-placeholder 
 ![npm version](https://badge.fury.io/js/react-loader-placeholder.svg)
 ![npm](https://img.shields.io/npm/dm/react-loader-placeholder)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-canva?color=green)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-loader-placeholder?color=green)
 
 Make beautiful, animated loading that easy adapt to your app.
 
