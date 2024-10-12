@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex: 1 0 auto;
+    --background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+}
+
+.container [data-react-loader-placeholder="true"] {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.container [data-react-loader-placeholder="true"]::after {
+    content: '';
+    background: var(--background);
+    background-size: 400% 400%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    animation: loading 5s ease infinite;
+    z-index: 99999;
+}
+
+.withoutAnimation [data-react-loader-placeholder="true"]::after {
+    animation: none;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}

@@ -1,13 +1,14 @@
 {
   "name": "react-loader-placeholder",
-  "version": "1.0.7",
+  "version": "1.1.7",
   "description": "A React library used to make your loader awesome",
   "private": false,
-  "main": "dist/reactLoaderPlaceholder.min.js",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.es.js",
   "scripts": {
-    "build": "rollup -c -o dist/reactLoaderPlaceholder.min.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c"
   },
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GoldenFishe/react-loader-placeholder.git"
@@ -19,7 +20,8 @@
     "placeholder",
     "progress",
     "spinner",
-    "awesome"
+    "awesome",
+    "skeleton"
   ],
   "author": "Riazanov Anton <ag.riazanov@gmail.com>",
   "license": "MIT",
@@ -27,16 +29,22 @@
     "url": "https://github.com/GoldenFishe/react-loader-placeholder/issues"
   },
   "homepage": "https://github.com/GoldenFishe/react-loader-placeholder#readme",
+  "type": "module",
+  "dependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "react": "^16.3.0",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-terser": "^5.1.1",
-    "styled-components": "^4.0.0"
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "rollup": "^4.24.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

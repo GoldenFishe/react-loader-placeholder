@@ -1,28 +1,33 @@
-import {terser} from "rollup-plugin-terser";
-import babel from 'rollup-plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 
+/**
+ * @type {import('rollup').RollupOptions}
+ */
 const config = {
-    input: 'src/reactLoaderPlaceholder.js',
-    external: ['react'],
-    output: {
-        format: 'umd',
-        name: 'react-loader-placeholder',
-        globals: {
-            react: "React",
-            "styled-components": "styled"
-        }
-    },
+    input: 'src/index.tsx',
+    external: ["react", "react-dom"],
+    output: [
+        {
+            format: 'cjs',
+            file: 'dist/index.js',
+            exports: 'named'
+        },
+        {
+            format: 'es',
+            file: 'dist/index.es.js'
+        },
+    ],
     plugins: [
-        resolve({preferBuiltins: true}),
-        babel({exclude: "node_modules/**"}),
-        commonjs({
-            namedExports: {'react-is': [' isElement', 'isValidElementType', 'ForwardRef']}
-        }),
-        terser(),
-        postcss({plugins: []})
-    ]
+        resolve({extensions: ['.js', '.jsx', '.ts', '.tsx'],}),
+        commonjs(),
+        typescript(),
+        postcss({modules: true, minimize: true,}),
+        terser()
+    ],
 };
-export default config
+
+export default config;
