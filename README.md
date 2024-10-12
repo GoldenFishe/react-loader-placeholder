@@ -14,7 +14,7 @@ Make beautiful, animated loading that easy adapt to your app.
 ## Principles
 The `<ReactLoaderPlaceholder>`  uses HTML `data` attribute for mark items and CSS for style that items. 
 
-![Base usabe code](https://i.ibb.co/yN86f2b/carbon.png)
+![Base usabe code](https://i.imgur.com/TJjPSr2.png)
 
 ## Usage
 
